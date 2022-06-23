@@ -20,7 +20,7 @@ public class GroupUserDetailService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Optional<User> user = repository.findByUserName(username);
-		return user.map(GroupUserDetails::new).orElseThrow(() -> new UsernameNotFoundException(username + " doesn't exist in syatem"));
+		return user.map(GroupUserDetails::new).orElseThrow(() -> new UsernameNotFoundException(username + " doesn't exist in system"));
 	}
 
 }
